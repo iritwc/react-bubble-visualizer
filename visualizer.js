@@ -19,7 +19,6 @@ class Visualizer extends React.Component {
   next() {
     const { step, list } = this.state;
     const { steps } = this;
-    console.log(this.timeoutRef);
     
     let _step = Math.min(steps.length, step + 1);
     if (_step >= 0) {
@@ -38,7 +37,6 @@ class Visualizer extends React.Component {
       } else {
         if (current.action == 'swap-show') {
           this.timeoutRef = setTimeout(this.next.bind(this), 1000);
-          console.log('timeoutref', this.timeoutRef);
         }
         this.setState({ step: _step });
       }
